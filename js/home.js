@@ -9,6 +9,7 @@ function colorLoad(){
     }).then(loadSuccess).catch(fail);
 }
 function loadSuccess(response){
+    Cookies.get('sessionToken');
     let colorsArray = response.data.data;
     console.log(colorsArray);
     let color = colorsArray[
@@ -31,5 +32,16 @@ function loadSuccess(response){
 function fail(error){
     console.log(error);
 }
+function checkCookie(){  
+        if(document.cookie.length!=0){  
+            console.log(document.cookie);  
+        } else {  
+            window.location.href='/index.html'; 
+        }  
+    } 
+
+
 document.getElementById('logoutBtn').addEventListener('click', userLogout);
 window.addEventListener('load', colorLoad);
+// window.addEventListener('load', cookieCheck);
+// 

@@ -10,12 +10,12 @@
     <title>User Authentication || Week 12C Assignment</title>
     <script src="/js/home.js" defer></script>
 </head>
-<body  id="colorBox">
+<body  id="colorBox" onload="checkCookie()">
     
     <div id="colorDisplayDiv">
+        <p id="welcomeMessage"></p>
         <p id="colorName"></p>
         <p id="yearCreated"></p>
-        
         <button id="logoutBtn">Logout</button>
     </div>
     

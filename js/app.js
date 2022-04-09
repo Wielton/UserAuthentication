@@ -13,16 +13,10 @@ function userLogin(){
 }
 function loginSuccess(response){
     console.log(response);
-    let passInput = document.getElementById('password').value;
-    if(passInput === "cityslicka"){
-        Cookies.set('sessionToken', response.data.token);
-        window.location.href='/home.html';
-    }else {
-        loginFail();
-    }
+    let token = response.data.token;
+    Cookies.set('sessionToken', token);
+    window.location.href='/home.html';
     
-    
-
 }
 function loginFail(error){
     console.log(error);
@@ -48,6 +42,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
     }
 }
+
+
+
 // 
 
 // Get the <span> element that closes the modal
